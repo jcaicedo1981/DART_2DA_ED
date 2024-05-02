@@ -1,4 +1,4 @@
-void main{
+void main(){
 ///Boleans -> representan verdadero y falso
 
 bool isActive = true;

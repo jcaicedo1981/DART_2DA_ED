@@ -1,4 +1,6 @@
-void main
+import 'dart:js_interop';
+
+void main ()
 {
    ////lista.- un tipo de dato que guarda una lista de elemnetos
 
@@ -10,11 +12,11 @@ void main
 
    //// primer elemento
 
-   print(lista1.firts);
+   print(lista1.first);
 
    /// uñitmo elemento
 
-   primer(lista1.last);
+   print(lista1.last);
 
    //// acceder un el,emto en espoecifico
 
@@ -24,23 +26,23 @@ void main
 
    ///operadores de manejo de listas
 
-   list.add(7);
+   //list.add(7);
    print (lista1);
    
    ///addall
 
    final lista3 = [10,11,12,13];
-   lista1.addall(lista3);
+   lista1.addAll(lista3);
    print(lista1);
    print (lista3);
 
    //remove
 
-   final value1 = list.remove(6);
-   print(value1);
+   //final value1 = list.remove(6);
+   //print(value1);
 
-   final value12 = list.remove(6);
-   print(value12);
+   //final value12 = list.remove(6);
+   //print(value12);
 
 
 }

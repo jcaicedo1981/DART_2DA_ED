@@ -1,27 +1,27 @@
-void main{
+void main(){
     //secuencia de caracteres
     ///string
 
     String miprimerstring = "Nombre y Aplellido";
 
-    Sttring misegundostring = 'Direccion';
+    //Sttring misegundostring = 'Direccion';
     
-    print (misegundostring);
+    print (miprimerstring);
 
     /// uso de comillas dobles
 
     String ingles = "It's easy";
 
-    Strin precio = 'El valor es de \$5.00';
+    String precio = 'El valor es de \$5.00';
     print (precio);
 
 
-    final longtext = '''
-     dgdfgdfffffffffffffffffffffffffffffffffffffffffffff
-     sssssssssssssssssssssssssssssssssssssssssssssssssssss
-     ssssssssssssssssssssssssssssssssssssssssssssssssssssss
-    '''
-    print (longtext);
+    //final longtext = '''
+    // dgdfgdfffffffffffffffffffffffffffffffffffffffffffff
+    // sssssssssssssssssssssssssssssssssssssssssssssssssssss
+    // ssssssssssssssssssssssssssssssssssssssssssssssssssssss
+    //'''
+    //print (longtext);
 
     //iNTERPOlacion de srting
 
