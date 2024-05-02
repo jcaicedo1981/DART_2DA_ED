@@ -5,7 +5,7 @@ main() {
   /// 
   /// [var] es una palabra reservada para declarar una variable en Dart.
   /// Este valor puede ser cambiado.
-  var name = "Richar";
+  var name = "Richar...";
 
   /// [final] is a reserved keyword to declare a variable in Dart.
   /// This value can't be changed.
