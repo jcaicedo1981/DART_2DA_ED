@@ -1,4 +1,3 @@
-import 'dart:js_interop';
 
 void main(){
 
@@ -8,7 +7,7 @@ print(valorNormal);
 final valorLamda= sumaLamda();
 print(valorLamda);
 
-print(sumaArgumentos(1, 2));
+print(sumaArgumentos(1,2));
 
 }
 
