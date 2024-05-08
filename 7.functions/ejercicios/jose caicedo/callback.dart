@@ -24,6 +24,8 @@ void saludar(String nombre, Function callback){
   print("suma es $suma");});
 
   //funcionVoid(() {print("hola");});
+
+  funcionDatos((p0) => "hola1111111");
 }
 
 
@@ -44,3 +46,11 @@ void otraFuncion(Function onSave){
 //void funcionVoid(VoidCallback void1){
  // void1();
 //}
+
+///Tipos de datos que vamos a retornar
+/// String -> es
+void funcionDatos(String Function(int) funcion){
+  
+  final valor = funcion.call(1);
+  print(valor);
+}
