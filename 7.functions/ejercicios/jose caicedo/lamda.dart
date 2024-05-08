@@ -1,3 +1,5 @@
+import 'dart:js_interop';
+
 void main(){
 
 final valorNormal = suma();
@@ -6,6 +8,7 @@ print(valorNormal);
 final valorLamda= sumaLamda();
 print(valorLamda);
 
+print(sumaArgumentos(1, 2));
 
 }
 
@@ -18,3 +21,7 @@ double suma(){
 ///funcion lamda
 ///
 double sumaLamda()=>1+2.4;
+
+///Argumnetos
+///
+double sumaArgumentos(int valor1, int valor2)=>(valor1 + valor2 ).toDouble();
