@@ -34,3 +34,12 @@ print ("Es Soltero: $esSoltero");
 void argumentoNUlo(String? nombre){
   print(nombre);
 }
+
+///Argumentos opcionales
+///
+
+void opcionales(String? nombre,[double? edad]){
+
+  print("El nombr es:$nombre y su edad es $edad");
+
+  }
