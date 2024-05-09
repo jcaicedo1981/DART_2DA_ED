@@ -1,12 +1,12 @@
-import '../../code/3_herencia_extends.dart';
 
 void main(){
 
-print(Perro("rojo", "juamn", "10"));
+//print(Perro("rojo", "juamn", "10"));
 
-final perroObjeto = Animal();
-final gatoObjeto = Animal();
-final aveObjeto = Animal();
+final perroObjeto = Animal(nombre:"Perrito", edad: 18, color: "rojo");
+
+print(perroObjeto.edad);
+
 
 }
 
@@ -18,6 +18,14 @@ final aveObjeto = Animal();
 /// Ave->nombre,edad, color
 class Animal{
 
+final String nombre;
+final int edad;
+final String color;
 
+Animal({
+  required String this.nombre,
+  required int this.edad,
+  required String this.color,
+});
 
 }
