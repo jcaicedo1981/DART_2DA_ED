@@ -2,7 +2,7 @@ void main()
 {
 
 //saludar();
-print(await saludar());
+//print(await saludar());
 }
 
 ////programacion asincrona
@@ -37,20 +37,20 @@ print("feliz anio");
 
  }
 
- Future<String> nombreUsuario() Async{
-  try {
-    print("se ejecuta");
+ ///Future<String> nombreUsuario() Async{
+  ///try {
+    ///print("se ejecuta");
     
-      } catch (err) {
-    print("Ocurrio un error");
+   ///   } catch (err) {
+    ///print("Ocurrio un error");
       //return '';
-      rethrow;
-  }
-  finally{
-    print("siempre se jecuta");
-  }
+     /// rethrow;
+ /// }
+  ///finally{
+    ///print("siempre se jecuta");
+ /// }
 
- }
+ ///}
 
  Future<String> getNombre() async{
 
