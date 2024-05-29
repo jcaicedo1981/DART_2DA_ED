@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class AuxiliarRouteScreen extends StatelessWidget {
-  const AuxiliarRouteScreen({super.key});
+class CardScreen extends StatelessWidget {
+  const CardScreen({super.key});
 
-  static const String routeName = '/auxiliar';
+  static const String routeName = '/card';
 
   @override
   Widget build(BuildContext context) {

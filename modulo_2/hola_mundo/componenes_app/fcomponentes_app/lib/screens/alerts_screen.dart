@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -27,10 +30,15 @@ class AlertsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Alertas"),
+        title: const Text("Alertas"),
+
+        /// actions -> son las acciones que tendrá el app bar
+        /// Se encuentran ubicadas en la parte derecha del AppBar
         actions: [
+          /// Un button que recibe un icon, se basa en las guias de material
           IconButton(
             onPressed: () {
+              /// Método que permite renderizar una alerta de tipo material
               showDialog(
                   context: context,
 
@@ -42,8 +50,9 @@ class AlertsScreen extends StatelessWidget {
 
                   /// Color de afuera
                   // barrierColor: Colors.amber,
-
+                  /// El builder es el metodo que se encarga de renderizar el contenido de la alerta
                   builder: (context) {
+                    /// Widget por defecto en Flutter para trabajar con alertas
                     return AlertDialog(
                       // Title
                       title: const Text('Mi primera alerta'),
@@ -60,13 +69,14 @@ class AlertsScreen extends StatelessWidget {
 
                       /// Boton de accion en la parte inferior
                       actions: [
-                        FilledButton(onPressed: () {}, child: Text("Aceptar")),
+                        FilledButton(
+                            onPressed: () {}, child: const Text("Aceptar")),
                         OutlinedButton(
                           onPressed: () {
                             /// Forzar cerrar la alerta
                             Navigator.pop(context);
                           },
-                          child: Text("Cancelar"),
+                          child: const Text("Cancelar"),
                         ),
                       ],
                     );
@@ -77,44 +87,106 @@ class AlertsScreen extends StatelessWidget {
         ],
       ),
       body: Center(
-          //Un boton tipo texto
-          child: TextButton(
-        //Accion que va a ejecutgar al presionar el botn
-        onPressed: () {
-          ///Metodo que crea una alerta
-          showCupertinoDialog(
-
-              ///como se identifica el wigget
+        /// Un boton de tipo texto
+        child: TextButton(
+          // Acción que va a ejecutar al presionar el btn
+          onPressed: () {
+            /// Método que crea una alerta pero basada en las normas de cupertino - iOS
+            showCupertinoDialog(
+              /// Como se identifica el widget dentro del árbol
               context: context,
 
-              ///Consruir el contenido de la alaerta
-              builder: (context) {
-                //return const AlertDialog(
-                //title: Text("HOla"),
+              /// Queremos que nuestra alerta se cierre al clickear fuera del contenido
+              barrierDismissible: true,
 
-                return const CupertinoAlertDialog(
-                  title: Text("Mi cupertino Alerta"),
-                  content:
-                      Text("ESta es mi alerta en cupertino o de modelo 105"),
+              /// Construir el contenido de la alerta
+              builder: (context) {
+                /// Puede retornar cualquier tipo de widget
+                /// Solo para cupertino pero puede usarse en otras alertas
+                return CupertinoAlertDialog(
+                  /// Titulo de nuestra alerta
+                  title: const Text("Mi cupertino alert"),
+
+                  /// Es el contenido de la alerta, recibe cualquier tipo de widget
+                  /// Puede ser un column, row, image, container.
+                  content: const Text(
+                      "Esta es mi alerta en cupertino o de modelo iOS"),
+
+                  /// Acciones o botones que el usuario va a interactuar con la alerta
                   actions: [
-                    //Esto es un voton material
-                    ///TextButton(onPressed: () {}, child: const Text("Cancelar"))
-                    ///Boton de accion que cumple la lia de cupertino
+                    // Este es un btn material
+                    // TextButton(onPressed: () {}, child: Text("Cancelar")),
+
+                    /// Botón de acción que cumple la linea de diseño de cupertino
                     CupertinoDialogAction(
-                      child: Text("Si Acepto"),
+                      child: const Text("Cancelar"),
+
+                      /// Coloca el btn en rojo
                       isDestructiveAction: true,
-                      //onPressed: () {
-                      // Navigator.pop(context);
-                      // },
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     ),
+
+                    CupertinoDialogAction(
+                      child: const Text("Si, Acepto"),
+
+                      /// Destaca el texto del botón
+                      isDefaultAction: true,
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
+                );
+              },
+            );
+          },
+          // contenido del botón  -> Text
+          child: const Text("Show cupertino alert"),
+        ),
+      ),
+
+      /// Btn flotante que va a estar en la parte inferior derecha
+      /// FloatingActionButton -> Un btn
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          /// Nos permite conocer la plataforma
+          print(Platform.isAndroid);
+
+          /// web -  chrome - no puede trabajar io con web
+          print(kIsWeb);
+
+          // if(Platform.isAndroid) {
+          //   // showDialog(context: context, builder: builder)
+          // } else {
+          //   // showCupertinoDialog(context: context, builder: builder)
+          // }
+
+          /// 1. Si eres android -> showDialog
+          /// 2. Si eres iOS -> showCupertinoDialog
+          /// 3. Otro sistema operativo -> showDialog
+          showAdaptiveDialog(
+              context: context,
+              barrierDismissible: true,
+
+              /// Builder renderiza la alerta
+              builder: (context) {
+                return AlertDialog.adaptive(
+                  title: const Text("Adaptativo"),
+                  content: const Text("Este es un contenido adaptativo"),
+                  actions: [
+                    /// Btn adaptativo desde el método contruido
+                    adaptiveAction(
+                        context: context,
+                        onPressed: () {},
+                        child: const Text("Cancelar")),
                   ],
                 );
               });
         },
-
-        ///contenido del boton ->text
-        child: const Text("Show cupeetine alert"),
-      )),
+        child: const Icon(Icons.route),
+      ),
     );
   }
 }

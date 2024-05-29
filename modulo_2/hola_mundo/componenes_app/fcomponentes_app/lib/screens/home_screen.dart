@@ -3,6 +3,7 @@ import 'package:fcomponentes_app/screens/form_screen.dart';
 import 'package:fcomponentes_app/screens/infinity_scroll_screen.dart';
 import 'package:fcomponentes_app/screens/lists_screen.dart';
 import 'package:fcomponentes_app/screens/lists_view_screen.dart';
+import 'package:fcomponentes_app/screens/photo_album_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'routing_screen.dart';
@@ -162,6 +163,28 @@ class HomeScreen extends StatelessWidget {
                 print("Bienvenido a los Formularios");
                 // Navigator
                 Navigator.pushNamed(context, FormScreen.routeName);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.format_align_center),
+              iconColor: const Color.fromARGB(255, 0, 183, 255),
+              title: const Text(
+                "Albun de Fotos",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 7, 62, 84),
+                  fontSize: 19,
+                  fontWeight: FontWeight.bold,
+                  // backgroundColor: Color.fromARGB(255, 0, 183, 255),
+                ),
+              ),
+              trailing: const Icon(Icons.arrow_forward_ios),
+              //autofocus: true,
+              //focusColor: const Color.fromARGB(255, 255, 0, 0),
+              splashColor: const Color.fromARGB(108, 0, 35, 19),
+              onTap: () {
+                print("Bienvenido a los Albun de fotos");
+                // Navigator
+                Navigator.pushNamed(context, PhotoAlbumScreen.routeName);
               },
             ),
           ],
