@@ -4,6 +4,7 @@ import 'package:fcomponentes_app/screens/infinity_scroll_screen.dart';
 import 'package:fcomponentes_app/screens/lists_screen.dart';
 import 'package:fcomponentes_app/screens/lists_view_screen.dart';
 import 'package:fcomponentes_app/screens/photo_album_screen.dart';
+import 'package:fcomponentes_app/screens/single_child_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'routing_screen.dart';

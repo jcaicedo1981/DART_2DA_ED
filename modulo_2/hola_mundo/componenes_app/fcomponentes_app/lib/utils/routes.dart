@@ -6,6 +6,7 @@ import 'package:fcomponentes_app/screens/photo_album_screen.dart';
 import 'package:fcomponentes_app/screens/routing_screen.dart';
 // ignore: unused_import
 import 'package:fcomponentes_app/screens/card_screen.dart';
+import 'package:fcomponentes_app/screens/single_child_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -21,4 +22,5 @@ final Map<String, Widget Function(BuildContext)> routes = {
   AlertsScreen.routeName: (context) => const AlertsScreen(),
   CardScreen.routeName: (context) => const CardScreen(),
   PhotoAlbumScreen.routeName: (context) => const PhotoAlbumScreen(),
+  SingleChildScreen.routeName: (context) => const SingleChildScreen(),
 };
